@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<title>Title</title>
+	<script src='../../dist/vue.js'></script>
+</head>
+<body>
+<div id='p1'></div>
+<div id='p2'></div>
+</body>
+</html>
+<script>
+	const { reactive, effect } = Vue
+	console.log(reactive)
+
+	const obj = reactive({
+		name: '枫邪',
+	})
+	effect(() => {
+		document.querySelector('#p1').innerText = obj.name
+	})
+	effect(() => {
+		document.querySelector('#p2').innerText = obj.name
+	})
+	setTimeout(() => {
+		obj.name = '李四'
+	}, 3000)
+</script>

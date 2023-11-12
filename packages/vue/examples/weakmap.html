@@ -1,0 +1,19 @@
+<script>
+	let obj = {
+		name: '张三',
+	}
+
+	const map = new Map()
+	map.set(obj, 'value')
+	obj = null
+
+
+	let obj2 = {
+		name: '李四'
+	}
+
+	const map2 = new WeakMap()
+	map2.set(obj2)
+	obj2 = null
+
+</script>
